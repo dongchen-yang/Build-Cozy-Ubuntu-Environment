@@ -88,3 +88,17 @@ socks主机: `127.0.0.1` `7891`
 在Clash设置成功后，直接访问以下链接即可查看当前机场的节点信息，可以实现简单的修改。
 
 [Clash可视化](http://clash.razord.top/#/proxies)
+
+## Setup ProxyChaines
+
+安装配置proxychains
+
+全局翻墙通过proxychains实现，即将任何程序和Trojan的proxy建立链接，原理和浏览器的代理相似
+下载: sudo apt-get install proxychains
+配置: sudo vi /etc/proxychains.conf
+在最后的ProxyList里注释默认的socks代理： socks4 前增加#表示注释
+在最后的ProxyList里加入Trojan的代理设置： socks5 127.0.0.1 1080
+测试本地IP: curl -4 ip.sb，将显示自己的IP
+测试代理IP: proxychains curl -4 ip.sb，将显示Trojan代理的IP
+后续使用的命令行需要代理时，只需要在前面加上 proxychains 即可
+如 proxychains npm install
