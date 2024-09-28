@@ -89,7 +89,7 @@ socks主机: `127.0.0.1` `7891`
 
 [Clash可视化](http://clash.razord.top/#/proxies)
 
-## Setup ProxyChaines
+## Setup ProxyChains
 
 安装配置proxychains
 
